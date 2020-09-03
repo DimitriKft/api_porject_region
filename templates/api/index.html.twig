@@ -1,19 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ApiController!{% endblock %}
+{% block title %}Liste des régions{% endblock %}
 
 {% block body %}
 <div class="container">
-<div class="row">
-<div class="col-md-3">
-    <div class="card border-primary mb-3" style="max-width: 20rem;">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h4 class="card-title">Primary card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h1>Liste des régions</h1>
+    <div class="row">
+        <div class="col-md-3">
+            {% for maRegion in mesRegions %}
+                <div class="card border-primary mb-3" style="max-width: 20rem;">
+                    <div class="card-header">{{ maRegion.code }}</div>
+                        <div class="card-body">
+                            <h4 class="card-title">{{ maRegion.nom }}</h4>
+                        </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
-</div>
-</div>
 </div>
 {% endblock %}
